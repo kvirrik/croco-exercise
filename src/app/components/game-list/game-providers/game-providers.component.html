@@ -1,0 +1,6 @@
+<div
+  class="provider-item"
+  *ngFor="let provider of providers$ | async; trackBy: trackByFn"
+>
+  <button>{{ provider.name }}</button>
+</div>

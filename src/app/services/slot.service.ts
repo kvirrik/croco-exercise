@@ -11,10 +11,10 @@ export class SlotService {
   constructor(private http: HttpClient) {}
 
   //
-  getCategories(): Observable<GameCategory[]> {
+  getCategories(): Observable<{ data: GameCategory[] }> {
     return this.http.get(
       `${API_ENDPOINT}/v2/slot/categories?include=games&platform=desktop`
-    ) as Observable<GameCategory[]>;
+    ) as Observable<{ data: GameCategory[] }>;
   }
 
   //
@@ -25,9 +25,9 @@ export class SlotService {
   }
 
   //
-  getProviders(): Observable<Provider[]> {
+  getProviders(): Observable<{ data: Provider[] }> {
     return this.http.get(
       `${API_ENDPOINT}?type=slot&platform=desktop`
-    ) as Observable<Provider[]>;
+    ) as Observable<{ data: Provider[] }>;
   }
 }

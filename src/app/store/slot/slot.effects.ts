@@ -18,9 +18,7 @@ export class SlotEffects {
       ofType('[Slot] Get Categories'),
       mergeMap(() =>
         this.slotService.getCategories().pipe(
-          map((categories: GameCategory[]) =>
-            getCategoriesSuccess({ categories })
-          ),
+          map(({ data: categories }) => getCategoriesSuccess({ categories })),
           catchError(() => EMPTY)
         )
       )
@@ -33,7 +31,7 @@ export class SlotEffects {
       ofType('[Slot] Get Providers'),
       mergeMap(() =>
         this.slotService.getProviders().pipe(
-          map((providers: Provider[]) => getProvidersSuccess({ providers })),
+          map(({ data: providers }) => getProvidersSuccess({ providers })),
           catchError(() => EMPTY)
         )
       )

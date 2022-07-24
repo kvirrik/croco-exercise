@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { CategoriesComponent } from './components/game-list/categories/categories.component';
+import { GameProvidersComponent } from './components/game-list/game-providers/game-providers.component';
+import { GameGridComponent } from './components/game-list/game-grid/game-grid.component';
 import { IconComponent } from './components/icon/icon.component';
 import { SportComponent } from './components/sport/sport.component';
 import { LiveComponent } from './components/live/live.component';
@@ -17,7 +20,6 @@ import { environment } from 'src/environments/environment';
 import { SlotEffects } from './store/slot/slot.effects';
 
 import * as fromSlots from './store/slot/slot.reducers';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     SportComponent,
     LiveComponent,
     CasinoComponent,
+    GameProvidersComponent,
+    GameGridComponent,
   ],
   imports: [
     BrowserModule,

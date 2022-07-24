@@ -1,1 +1,6 @@
-<p>categories works!</p>
+<div
+  class="category-item"
+  *ngFor="let category of categories$ | async; trackBy: trackByFn"
+>
+  <button>{{ category.name }}</button>
+</div>

@@ -2,16 +2,15 @@
   width: 100%;
   height: auto;
   min-height: 50px;
-  background-color: #1d242c;
-  border-radius: 6px 6px 0 0;
-  margin-top: 10px;
+  background-color: #272d36;
+  border-radius: 0 0 6px 6px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.category-item {
+.provider-item {
   height: 50px;
   color: #d9e3ef;
 
@@ -23,6 +22,7 @@
     outline: none;
     height: 100%;
     cursor: pointer;
+    text-transform: uppercase;
   }
 
   &:hover,
