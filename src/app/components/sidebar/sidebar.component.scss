@@ -1,0 +1,44 @@
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background-color: #2a3139;
+
+  &--menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-item {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6a7787;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 10px;
+      width: 100%;
+
+      app-icon {
+        margin-bottom: 10px;
+      }
+
+      &:hover,
+      .active {
+        color: #fff;
+      }
+
+      &.active {
+        border-left: 3px solid #189541;
+      }
+    }
+  }
+
+  &--logo {
+    padding: 10px 10px 20px;
+  }
+}
