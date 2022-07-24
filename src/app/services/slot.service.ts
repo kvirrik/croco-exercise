@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_ENDPOINT } from '../constants';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { GameCategory, Provider } from '../interfaces';
 
 @Injectable({

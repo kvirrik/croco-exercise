@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "croco-slots"
+  "defaultProject": "croco-slots",
+  "cli": {
+    "analytics": false
+  }
 }
