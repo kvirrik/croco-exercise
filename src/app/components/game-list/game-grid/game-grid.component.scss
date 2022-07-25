@@ -1,0 +1,157 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  border: 8px solid #272d36;
+  border-top: 8px solid #d9e3ef;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 20px 0;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-flow: dense;
+  position: relative;
+  grid-gap: 10px;
+  padding: 10px 0;
+
+  &__item {
+    grid-column-end: span 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      .games__item--image::after {
+        opacity: 0.6;
+      }
+
+      .games__item--play {
+        display: block;
+      }
+
+      .games__item--title {
+        background-color: #454d57;
+      }
+    }
+
+    &--tags {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+
+      span {
+        background-color: #15af44;
+        padding: 2px 10px;
+        color: #fff;
+        z-index: 1;
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-right: 5px;
+        font-size: 12px;
+      }
+    }
+
+    &--image {
+      position: relative;
+
+      &:before {
+        display: block;
+        content: "";
+        padding-top: 64.81%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        opacity: 0;
+        background: #000;
+      }
+
+      img {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+      }
+    }
+
+    &--title {
+      display: flex;
+      width: 100%;
+      padding: 9px 12px;
+      color: #fff;
+      background: #252b33;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+
+      span {
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &--play {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: none;
+      outline: none;
+      background: #15af44;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 3px;
+      padding: 8px 50px;
+      z-index: 3;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .games {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .games {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .games {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

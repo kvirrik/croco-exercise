@@ -10,18 +10,18 @@ import {
 
 //
 export interface SlotState {
-  loading: boolean;
+  gamesByProvider: { [name: string]: any };
   categories: GameCategory[];
   providers: Provider[];
-  slots: any;
+  loading: boolean;
 }
 
 //
 export const initialState: SlotState = {
+  gamesByProvider: {},
   categories: [],
   providers: [],
   loading: false,
-  slots: null,
 };
 
 //
@@ -54,10 +54,13 @@ export const reducer = createReducer(
   ),
   on(
     getSlotsByProviderSuccess,
-    (state, { slots }): SlotState => ({
+    (state, { data }): SlotState => ({
       ...state,
       loading: false,
-      slots,
+      gamesByProvider: {
+        ...state.gamesByProvider,
+        [data.provider]: data.games,
+      },
     })
   )
 );

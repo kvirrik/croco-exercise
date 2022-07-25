@@ -1,6 +1,10 @@
 <div
-  class="category-item"
-  *ngFor="let category of categories$ | async; trackBy: trackByFn"
+  *ngFor="let category of categories; trackBy: trackByFn"
+  [class.active]="category.name === active?.name"
+  class="category"
 >
-  <button>{{ category.name }}</button>
+  <button (click)="selectCategory(category)">
+    {{ category.name }}
+    <span class="category__count">{{ category.totalGames }}</span>
+  </button>
 </div>

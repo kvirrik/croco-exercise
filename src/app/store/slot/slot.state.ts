@@ -23,9 +23,16 @@ export const selectProviders = createSelector(
 );
 
 //
-export const selectSlotsByProvider = createSelector(
+export const selectGamesByProvider = (name: string) =>
+  createSelector(
+    selectSlotData,
+    ({ gamesByProvider }: SlotState) => gamesByProvider?.[name]
+  );
+
+//
+export const selectProviderGames = createSelector(
   selectSlotData,
-  ({ slots }: SlotState) => slots
+  ({ gamesByProvider }: SlotState) => gamesByProvider
 );
 
 //

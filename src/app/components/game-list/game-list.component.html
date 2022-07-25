@@ -1,10 +1,14 @@
-<div class="game-list-container">
-  <img class="banner" src="./../../../assets/images/banner.jpg" />
-  <div class="game-list-filter">
-    <app-categories></app-categories>
-    <app-game-providers></app-game-providers>
-  </div>
-  <div class="game-list-grid">
-    <app-game-grid></app-game-grid>
-  </div>
+<img class="banner" src="./../../../assets/images/banner.jpg" />
+<div class="game-list__filter">
+  <app-categories
+    (selected)="onCategorySelect($event)"
+    [active]="activeCategory"
+  ></app-categories>
+  <app-game-providers
+    (selected)="onProviderSelect($event)"
+    [active]="activeProvider"
+  ></app-game-providers>
+</div>
+<div class="game-list__grid">
+  <app-game-grid [games]="games || (providerGames$ | async)"></app-game-grid>
 </div>

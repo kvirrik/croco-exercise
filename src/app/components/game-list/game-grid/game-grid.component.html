@@ -1,1 +1,19 @@
-<p>game-grid works!</p>
+<div class="loading" *ngIf="loading$ | async; else loaded"></div>
+<ng-template #loaded>
+  <div class="games">
+    <div class="games__item" *ngFor="let game of games">
+      <div class="games__item--tags">
+        <span *ngFor="let tag of game?.tags">{{ tag }}</span>
+      </div>
+      <div class="games__item--image">
+        <img [src]="game.image" />
+        <button (click)="openGame(game.url)" class="games__item--play">
+          Play
+        </button>
+      </div>
+      <div class="games__item--title">
+        <span>{{ game.name }}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

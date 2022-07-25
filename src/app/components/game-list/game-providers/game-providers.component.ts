@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Provider } from 'src/app/interfaces';
 import { getProviders } from 'src/app/store/slot/slot.actions';
@@ -12,6 +19,12 @@ import { selectProviders } from 'src/app/store/slot/slot.state';
 })
 export class GameProvidersComponent implements OnInit {
   //
+  @Input() active!: Provider | null;
+
+  //
+  @Output() selected = new EventEmitter<Provider>();
+
+  //
   providers$ = this.store.select(selectProviders);
 
   //
@@ -20,6 +33,11 @@ export class GameProvidersComponent implements OnInit {
   //
   ngOnInit(): void {
     this.fetch();
+  }
+
+  //
+  selectProvider(provider: Provider): void {
+    this.selected.emit(provider);
   }
 
   //

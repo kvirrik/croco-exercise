@@ -11,23 +11,40 @@
   flex-wrap: wrap;
 }
 
-.category-item {
+.category {
   height: 50px;
-  color: #d9e3ef;
+  color: #fff;
+  padding: 0 10px;
+  border-bottom: 3px solid transparent;
 
   button {
     border: none;
     background: none;
-    padding: 0 10px;
     color: inherit;
     outline: none;
     height: 100%;
     cursor: pointer;
+    position: relative;
+  }
+
+  &__count {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    position: absolute;
+    top: 5px;
+    right: -7px;
   }
 
   &:hover,
-  .active {
+  &.active {
     border-bottom: 3px solid #15af44;
     color: #fff;
+  }
+
+  &:hover {
+    .category__count {
+      color: #15af44;
+    }
   }
 }

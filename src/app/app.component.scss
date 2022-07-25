@@ -1,3 +1,7 @@
 .dashboard {
   display: flex;
 }
+.content {
+  height: 100vh;
+  overflow-y: auto;
+}

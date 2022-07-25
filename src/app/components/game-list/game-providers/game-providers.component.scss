@@ -1,4 +1,4 @@
-:host {
+.providers {
   width: 100%;
   height: auto;
   min-height: 50px;
@@ -8,26 +8,27 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-}
 
-.provider-item {
-  height: 50px;
-  color: #d9e3ef;
+  &__item {
+    height: 50px;
+    color: #d9e3ef;
+    border-bottom: 3px solid transparent;
 
-  button {
-    border: none;
-    background: none;
-    padding: 0 10px;
-    color: inherit;
-    outline: none;
-    height: 100%;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
+    button {
+      border: none;
+      background: none;
+      padding: 0 10px;
+      color: inherit;
+      outline: none;
+      height: 100%;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
 
-  &:hover,
-  .active {
-    border-bottom: 3px solid #15af44;
-    color: #fff;
+    &:hover,
+    &.active {
+      border-bottom: 3px solid #15af44;
+      color: #fff;
+    }
   }
 }

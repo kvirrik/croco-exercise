@@ -28,5 +28,5 @@ export const getSlotsByProvider = createAction(
 //
 export const getSlotsByProviderSuccess = createAction(
   '[Slot] Get Slots By Provider Success',
-  props<{ slots: any }>()
+  props<{ data: any }>()
 );
